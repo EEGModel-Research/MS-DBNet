@@ -73,12 +73,12 @@ Both branches share a common front-end (Block 1 temporal convolution + Block 2 s
 
 ```
 MS-DBNet/
-├── README.md          # This file
-├── requirements.txt   # Python dependencies
-├── ms_dbnet.py        # Model definitions (MSDBNet, SSTB, MSDB)
-├── modules.py         # Core building blocks (CTA, MultiScaleTemporalConv, etc.)
+├── README.md                     # User Manual
+├── ms_dbnet.py                   # Model definitions (MSDBNet, SSTB, MSDB)
+├── modules.py                    # Core building blocks (CTA, MultiScaleTemporalConv, etc.)
 └── figures/
-    └── MS-DBNet.png   # Architecture diagram
+    ├── MS-DBNet.png              # Architecture diagram
+    └── Accuracy comparison.png   # Comparison diagram
 ```
 
 ### File Descriptions
@@ -88,37 +88,7 @@ MS-DBNet/
 | `ms_dbnet.py` | Contains the three model classes: **`MSDBNet`** (full dual-branch model), **`SSTB`** (Single-Scale Temporal Branch), and **`MSDB`** (Multi-Scale Dilated Branch). Each branch can be used independently for ablation studies. |
 | `modules.py` | Contains the five reusable building blocks: `Conv2dWithConstraint`, `LinearWithConstraint`, `ChannelTimeAttention` (CTA), `MultiScaleTemporalConv`, and `DilatedMultiScaleConv`. |
 
-## 5. Requirements
-
-- Python ≥ 3.8
-- PyTorch ≥ 1.9
-
-Install dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-## 6. Quick Start
-
-```python
-import torch
-from ms_dbnet import MSDBNet, SSTB, MSDB
-
-# --- Full model (MS-DBNet) ---
-# Example: BCIC IV 2a dataset (22 channels, 1000 time points, 4 classes)
-model = MSDBNet(nChan=22, nTime=1000, nClass=4)
-
-x = torch.randn(8, 1, 22, 1000)   # batch of 8 trials
-output = model(x)                   # [8, 4] log-probabilities
-print(output.shape)                 # torch.Size([8, 4])
-
-# --- Individual branches (for ablation) ---
-sstb = SSTB(nChan=22, nTime=1000, nClass=4)
-msdb = MSDB(nChan=22, nTime=1000, nClass=4)
-```
-
-## 7. Citation
+## 5. Citation
 
 If you find this work useful, please cite:
 
@@ -137,6 +107,6 @@ If you find this work useful, please cite:
 }
 ```
 
-## 8. Contact
+## 6. Contact
 
 For questions or issues, please open a GitHub issue or contact: **shifenglin@connect.hku.hk**
