@@ -28,7 +28,7 @@ MS-DBNet consists of two parallel branches:
 | **SSTB** | Single-Scale Temporal Branch | Employs spatial depthwise convolution and single-scale temporal depthwise separable convolution to precisely capture **fine-grained local temporal patterns** at high resolution. |
 | **MSDB** | Multi-Scale Dilated Branch | Utilizes multi-scale kernels and dilated convolutions to systematically expand the receptive field, learning **long-range contextual dependencies** tolerant to temporal variations. |
 
-Both branches share a common front-end (Block 1 temporal convolution + Block 2 spatial depthwise convolution), but diverge in their temporal processing blocks:
+Both branches have the same front-end (Block 1 temporal convolution + Block 2 spatial depthwise convolution), but diverge in their temporal processing blocks:
 
 <table>
 <tr><th></th><th>SSTB</th><th>MSDB</th></tr>
