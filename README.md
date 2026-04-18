@@ -64,6 +64,11 @@ Both branches share a common front-end (Block 1 temporal convolution + Block 2 s
 | w/o Dilation | 82.52 ±7.74 | 82.36 ±7.91 | 0.767 ±0.103 |
 | w/o Attention | 83.83 ±6.92 | 83.68 ±7.04 | 0.785 ±0.092 |
 
+<p align="center">
+  <img src="figures/Accuracy comparison.svg" width="90%" alt="Accuracy comparison in the BCIC IV 2a dataset"/>
+</p>
+<p align="center"><b>Figure 2:</b> Accuracy comparison of MS-DBNet, SSTB-only, and MSDB-only for the 9 subjects in the BCIC IV 2a dataset.</p>
+
 ## 4. Repository Structure
 
 ```
